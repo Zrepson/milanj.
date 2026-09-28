@@ -1,0 +1,61 @@
+export const metadata = {
+  title: "Contact | Milan Joshi",
+  description:
+    "Get in touch with Milan Joshi about web development, projects, digital strategy or life insurance.",
+};
+
+export default function ContactPage() {
+  return (
+    <>
+      <section className="hero">
+        <div className="container">
+          <p className="eyebrow">CONTACT</p>
+
+          <h1>
+            Let&apos;s <span>connect.</span>
+          </h1>
+
+          <p className="hero-description">
+            Have an idea, project or question? I&apos;d love to hear about it.
+            Reach out and let&apos;s start a conversation.
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">GET IN TOUCH</p>
+              <h2>Start a conversation.</h2>
+            </div>
+            <p>
+              Whether it&apos;s a website, a project plan or a life insurance
+              question — I&apos;m here to help.
+            </p>
+          </div>
+
+          <div className="explore-grid">
+            <a href="mailto:hello@milanjoshi.com" className="explore-card">
+              <h3>Email</h3>
+              <p>The best way to reach me for project inquiries.</p>
+              <span>hello@milanjoshi.com →</span>
+            </a>
+
+            <a href="#" className="explore-card">
+              <h3>LinkedIn</h3>
+              <p>Connect professionally and view my background.</p>
+              <span>View profile →</span>
+            </a>
+
+            <a href="#" className="explore-card">
+              <h3>GitHub</h3>
+              <p>See code, experiments and open-source work.</p>
+              <span>View profile →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
