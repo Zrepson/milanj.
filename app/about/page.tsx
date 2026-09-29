@@ -119,28 +119,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="about-gallery-section">
-        <div className="container">
-          <div className="about-gallery-heading">
-            <div>
-              <p className="eyebrow">OUTSIDE THE DAY-TO-DAY</p>
-              <h2>A few personal moments.</h2>
-            </div>
-            <p>
-              Travel, family and the landscapes that give me room to pause,
-              notice and explore.
-            </p>
-          </div>
-          <PhotoLightboxGallery
-            moments={personalMoments}
-            gridClassName="about-gallery-grid"
-            itemClassName="about-gallery-item"
-            imageClassName="about-gallery-image"
-            triggerClassName="about-gallery-trigger"
-            imageSizes="(max-width: 600px) 92vw, (max-width: 900px) 44vw, 38vw"
-          />
-        </div>
-      </section>
+      
 
       <section className="about-profile-section about-profile-section-contrast">
         <div className="container about-profile-grid">
@@ -221,6 +200,29 @@ export default function AboutPage() {
             open to where they lead. My aim is to contribute with curiosity
             and leave things a little better than I found them.
           </p>
+        </div>
+      </section>
+
+      <section className="about-gallery-section">
+        <div className="container">
+          <div className="about-gallery-heading">
+            <div>
+              <p className="eyebrow">OUTSIDE THE DAY-TO-DAY</p>
+              <h2>A few personal moments.</h2>
+            </div>
+            <p>
+              Travel, family and the landscapes that give me room to pause,
+              notice and explore.
+            </p>
+          </div>
+          <PhotoLightboxGallery
+            moments={personalMoments}
+            gridClassName="about-gallery-grid"
+            itemClassName="about-gallery-item"
+            imageClassName="about-gallery-image"
+            triggerClassName="about-gallery-trigger"
+            imageSizes="(max-width: 600px) 92vw, (max-width: 900px) 44vw, 38vw"
+          />
         </div>
       </section>
 
