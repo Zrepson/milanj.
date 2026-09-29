@@ -95,6 +95,16 @@ function NepalClock() {
         <span className="nepal-clock-zone">NPT · UTC+05:45</span>
       </time>
       <a
+        className="un-holiday-calendar"
+        href="/united-nations-holiday.ics"
+        download
+        aria-label="Download United Nations holiday calendar"
+        title="Download United Nations holiday calendar"
+      >
+        <span className="un-holiday-calendar-label">UNITED NATIONS HOLIDAY</span>
+        <span className="un-holiday-calendar-format">.ICS ↗</span>
+      </a>
+      <a
         className="nepal-holiday"
         href="https://moha.gov.np/en/page/government-and-public-holidays-in-2083"
         aria-label={nextHoliday ? `Upcoming Nepal holiday: ${nextHoliday.name}, ${nextHoliday.dateLabel}` : "View Nepal public holiday calendar"}
