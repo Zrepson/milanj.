@@ -1,5 +1,4 @@
 import Link from "next/link";
-import WelcomeScreen from "@/components/WelcomeScreen";
 
 const services = [
   {
@@ -50,7 +49,6 @@ export default function Home() {
               <Link href="/about" className="text-link">A little about me <span aria-hidden="true">→</span></Link>
             </div>
             <div className="hero-note"><span>BASED IN NEPAL</span><span className="note-line" /><span>WORKING EVERYWHERE</span></div>
-            <WelcomeScreen />
           </div>
           <div className="hero-art" aria-label="Abstract golden orbital artwork">
             <div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="orbit orbit-three" />

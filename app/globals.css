@@ -42,6 +42,27 @@ a {
 
 /* NAVIGATION */
 
+.navbar-meta {
+  border-bottom: 1px solid var(--border);
+  background: #0e100d;
+}
+
+.navbar-meta-inner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 48px;
+}
+
+.navbar-meta .nepal-clock {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.navbar-meta .nepal-holiday {
+  margin-left: 18px;
+}
+
 .navbar {
   position: sticky;
   top: 0;
@@ -714,7 +735,13 @@ a.work-engagement-logo:hover { transform: translateY(-3px); border-color: var(--
   .work-engagement-item { flex-basis: 190px; }
   .work-moments-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .work-timeline-item { grid-template-columns: 35px 125px 1fr; gap: 16px; }
-  .navbar-right { gap: 14px; }
+  .navbar-meta-inner { min-height: 40px; }
+  .navbar-meta .nepal-clock { column-gap: 7px; }
+  .navbar-meta .nepal-clock-date { font-size: 9px; }
+  .navbar-meta .nepal-clock-time { font-size: 11px; }
+  .navbar-meta .nepal-holiday { margin-left: 12px; }
+  .navbar-meta .nepal-holiday-name { font-size: 9px; }
+.navbar-right { gap: 14px; }
   .nepal-clock { padding-left: 12px; column-gap: 7px; }
   .nepal-clock-date { font-size: 10px; }
   .nepal-clock-time { font-size: 12px; }

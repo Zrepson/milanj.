@@ -111,8 +111,14 @@ function NepalClock() {
 
 export default function Navbar() {
   return (
-    <header className="navbar">
-      <div className="container navbar-inner">
+    <>
+      <div className="navbar-meta" aria-label="Nepal time and upcoming holidays">
+        <div className="container navbar-meta-inner">
+          <NepalClock />
+        </div>
+      </div>
+      <header className="navbar">
+        <div className="container navbar-inner">
         <Link href="/" className="logo">
           <span className="logo-word">MILAN<span>.</span></span>
           <span className="logo-flag">
@@ -132,17 +138,17 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <div className="navbar-right">
-          <nav className="navigation">
-            <Link href="/about">About</Link>
-            <Link href="/work">Work</Link>
-            <Link href="/services">Services</Link>
-            <Link href="/impact">Impact</Link>
-            <Link href="/contact">Contact</Link>
-          </nav>
-          <NepalClock />
+          <div className="navbar-right">
+            <nav className="navigation">
+              <Link href="/about">About</Link>
+              <Link href="/work">Work</Link>
+              <Link href="/services">Services</Link>
+              <Link href="/impact">Impact</Link>
+              <Link href="/contact">Contact</Link>
+            </nav>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 }
