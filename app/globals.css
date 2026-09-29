@@ -755,10 +755,22 @@ a.work-engagement-logo:hover { transform: translateY(-3px); border-color: var(--
   .home-service { grid-template-columns: 42px 1fr 24px; }
   .home-service-label { display: none; }
   .approach-grid { gap: 42px; }
-  .navigation {
-    gap: 14px;
+  .navbar-right {
+  min-width: 0;
+  }
 
-    font-size: 12px;
+  .navigation {
+  max-width: min(72vw, 620px);
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+  font-size: 12px;
+  white-space: nowrap;
+  }
+
+  .navigation::-webkit-scrollbar {
+  display: none;
   }
 
   .hero {

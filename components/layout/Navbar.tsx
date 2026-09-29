@@ -139,11 +139,14 @@ export default function Navbar() {
         </Link>
 
           <div className="navbar-right">
-            <nav className="navigation">
+            <nav className="navigation" aria-label="Primary navigation">
               <Link href="/about">About</Link>
-              <Link href="/work">Work</Link>
+              <Link href="/work">Experience</Link>
               <Link href="/services">Services</Link>
-              <Link href="/impact">Impact</Link>
+              <Link href="/work#areas">Projects</Link>
+              <Link href="/credentials">Credentials</Link>
+              <Link href="/lab">Insights</Link>
+              <Link href="/impact">Community</Link>
               <Link href="/contact">Contact</Link>
             </nav>
           </div>
