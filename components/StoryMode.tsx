@@ -78,7 +78,7 @@ export default function StoryMode({ onComplete }: { onComplete: () => void }) {
 
       <div className={`story-chapter story-${phase}`} key={index}>
         <p className="story-number">{chapter.number}</p>
-        <h2 className="story-heading">{chapter.title}</h2>
+        <h2 className="story-heading" id="story-intro-title">{chapter.title}</h2>
         <p className="story-text">{chapter.text}</p>
       </div>
 

@@ -36,22 +36,22 @@ export default function ContactPage() {
           </div>
 
           <div className="explore-grid">
-            <a href="mailto:hello@milanjoshi.com" className="explore-card">
+            <a href="mailto:mail@milanjoshi.com.np" className="explore-card">
               <h3>Email</h3>
               <p>The best way to reach me for project inquiries.</p>
-              <span>hello@milanjoshi.com →</span>
+              <span className="contact-card-detail">mail@milanjoshi.com.np →</span>
             </a>
 
-            <a href="#" className="explore-card">
+            <a href="https://linkedin.com/in/milanjoshi18" className="explore-card" target="_blank" rel="noreferrer">
               <h3>LinkedIn</h3>
               <p>Connect professionally and view my background.</p>
-              <span>View profile →</span>
+              <span className="contact-card-detail">View LinkedIn profile →</span>
             </a>
 
-            <a href="#" className="explore-card">
-              <h3>GitHub</h3>
-              <p>See code, experiments and open-source work.</p>
-              <span>View profile →</span>
+            <a href="https://wa.me/9779823267863" className="explore-card" target="_blank" rel="noreferrer">
+              <h3>WhatsApp</h3>
+              <p>Message me directly about a project or question.</p>
+              <span className="contact-card-detail">+977 982-326-7863 →</span>
             </a>
           </div>
         </div>
@@ -59,3 +59,4 @@ export default function ContactPage() {
     </>
   );
 }
+
