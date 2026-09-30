@@ -125,6 +125,8 @@ function NepalClock({ language }: { language: Language }) {
         href="https://moha.gov.np/en/page/government-and-public-holidays-in-2083"
         aria-label={nextHoliday ? `Upcoming Nepal holiday: ${nextHoliday.name}, ${nextHoliday.dateLabel}` : "View Nepal public holiday calendar"}
         title="View the official Nepal public holiday calendar"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <span className="nepal-holiday-label">{nextHoliday ? labels.upcoming : labels.holidays}</span>
         <span className="nepal-holiday-name">
@@ -194,6 +196,9 @@ export default function Navbar() {
       <div className="navbar-meta" aria-label="Nepal time and upcoming holidays">
         <div className="container navbar-meta-inner">
           <NepalClock language={language} />
+          <p className="navbar-notice" role="status">
+            Website not finalized yet
+          </p>
           <div className="navbar-meta-controls">
             <label className="language-select">
               <span className="sr-only">Website language</span>

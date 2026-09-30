@@ -42,13 +42,13 @@ export default function ContactPage() {
               <span className="contact-card-detail">mail@milanjoshi.com.np →</span>
             </a>
 
-            <a href="https://linkedin.com/in/milanjoshi18" className="explore-card" target="_blank" rel="noreferrer">
+            <a href="https://linkedin.com/in/milanjoshi18" className="explore-card" target="_blank" rel="noopener noreferrer">
               <h3>LinkedIn</h3>
               <p>Connect professionally and view my background.</p>
               <span className="contact-card-detail">View LinkedIn profile →</span>
             </a>
 
-            <a href="https://wa.me/9779823267863" className="explore-card" target="_blank" rel="noreferrer">
+            <a href="https://wa.me/9779823267863" className="explore-card" target="_blank" rel="noopener noreferrer">
               <h3>WhatsApp</h3>
               <p>Message me directly about a project or question.</p>
               <span className="contact-card-detail">+977 982-326-7863 →</span>

@@ -205,7 +205,7 @@ export default function WorkPage() {
             <li><a href="#areas">Areas</a></li>
             <li><a href="#experience">Profile</a></li>
             <li><a href="#timeline">Career</a></li>
-            <li><a href="#credentials">Credentials</a></li>
+            <li><Link href="/credentials#recognition">Credentials</Link></li>
             <li><a href="#sustainable-development">SDGs</a></li>
             <li><a href="#engagements">Organizations</a></li>
             <li><a href="#moments">Field work</a></li>
@@ -297,6 +297,19 @@ export default function WorkPage() {
         </div>
       </section>
 
+      <section className="about-closing-section">
+        <div className="container about-closing-inner">
+          <p className="eyebrow">STILL LEARNING · STILL EXPLORING</p>
+          <h2>There is always another road worth discovering.</h2>
+          <p>
+            I don&apos;t see life as a straight line. It is a network of roads—some
+            planned, some unexpected. I&apos;m still learning, still building and
+            open to where they lead. My aim is to contribute with curiosity
+            and leave things a little better than I found them.
+          </p>
+        </div>
+      </section>
+
       <section className="section work-journey-section" id="timeline">
         <div className="container">
           <div className="section-heading">
@@ -333,40 +346,6 @@ export default function WorkPage() {
             experience or advising on insurance, I aim to make information
             clear, decisions informed and next steps manageable.
           </p>
-        </div>
-      </section>
-
-      <section className="work-credentials-section" id="credentials">
-        <div className="container">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">LEADERSHIP &amp; LEARNING</p>
-              <h2>Credentials and recognition.</h2>
-            </div>
-            <p>
-              Badges and certificates from sustainable leadership, future-focused
-              initiatives and humanitarian learning.
-            </p>
-          </div>
-          <div className="work-credentials-grid">
-            {credentials.map((credential) => (
-              <article className="work-credential" key={credential.src}>
-                <div className="work-credential-image">
-                  <Image
-                    src={credential.src}
-                    alt={credential.alt}
-                    fill
-                    sizes="(max-width: 600px) 44vw, (max-width: 900px) 40vw, 24vw"
-                  />
-                </div>
-                <div className="work-credential-copy">
-                  <h3>{credential.title}</h3>
-                  <p>{credential.detail}</p>
-                  <p className="work-credential-description">{credential.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
