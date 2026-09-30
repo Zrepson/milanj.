@@ -19,11 +19,31 @@ const nepaliMonthStarts = [
   { date: "2027-03-16", month: "चैत", year: 2083 },
 ];
 
+type Language = "en" | "ne" | "hi";
+
+const languageLabels: Record<Language, string> = {
+  en: "English",
+  ne: "नेपाली",
+  hi: "हिन्दी",
+};
+
+const navigationLabels: Record<Language, string[]> = {
+  en: ["About", "Experience", "Services", "Projects", "Credentials", "Insights", "Community", "Contact"],
+  ne: ["परिचय", "अनुभव", "सेवाहरू", "परियोजनाहरू", "प्रमाणपत्र", "अन्तर्दृष्टि", "समुदाय", "सम्पर्क"],
+  hi: ["परिचय", "अनुभव", "सेवाएँ", "परियोजनाएँ", "प्रमाणपत्र", "अंतर्दृष्टि", "समुदाय", "संपर्क"],
+};
+
+const clockLabels: Record<Language, { zone: string; upcoming: string; holidays: string; viewCalendar: string }> = {
+  en: { zone: "NPT · UTC+05:45", upcoming: "UPCOMING HOLIDAY", holidays: "NEPAL HOLIDAYS", viewCalendar: "View calendar ↗" },
+  ne: { zone: "एनपीटी · यूटीसी+०५:४५", upcoming: "आउँदो बिदा", holidays: "नेपालका बिदाहरू", viewCalendar: "क्यालेन्डर हेर्नुहोस् ↗" },
+  hi: { zone: "एनपीटी · यूटीसी+०५:४५", upcoming: "आगामी अवकाश", holidays: "नेपाल की छुट्टियाँ", viewCalendar: "कैलेंडर देखें ↗" },
+};
+
 function toNepaliDigits(value: number) {
   return String(value).replace(/\d/g, (digit) => "०१२३४५६७८९"[Number(digit)]);
 }
 
-function formatNepaliDate(now: Date | null, dateKey: string) {
+function formatNepaliDate(now: Date | null, dateKey: string, language: Language) {
   if (!now || !dateKey) return "";
 
   const today = Date.parse(`${dateKey}T00:00:00Z`);
@@ -40,11 +60,17 @@ function formatNepaliDate(now: Date | null, dateKey: string) {
     timeZone: "Asia/Kathmandu",
     weekday: "long",
   }).format(now);
+  const localizedWeekday =
+    language === "en"
+      ? new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Kathmandu", weekday: "long" }).format(now)
+      : language === "hi"
+        ? new Intl.DateTimeFormat("hi-IN", { timeZone: "Asia/Kathmandu", weekday: "long" }).format(now)
+        : weekday;
 
-  return `${weekday} · ${monthStart.month} ${toNepaliDigits(monthDay)}, ${toNepaliDigits(monthStart.year)}`;
+  return `${localizedWeekday} · ${monthStart.month} ${toNepaliDigits(monthDay)}, ${toNepaliDigits(monthStart.year)}`;
 }
 
-function NepalClock() {
+function NepalClock({ language }: { language: Language }) {
   const [now, setNow] = useState<Date | null>(null);
 
   useEffect(() => {
@@ -82,9 +108,10 @@ function NepalClock() {
   const todayKey = ["year", "month", "day"]
     .map((type) => todayParts.find((part) => part.type === type)?.value ?? "")
     .join("-");
-  const nepaliDate = formatNepaliDate(now, todayKey);
+  const nepaliDate = formatNepaliDate(now, todayKey, language);
   const nextHoliday = [{ date: "2026-10-17", name: "Phulpati", dateLabel: "17 Oct" }]
     .find((holiday) => holiday.date >= todayKey);
+  const labels = clockLabels[language];
 
   return (
     <>
@@ -92,7 +119,7 @@ function NepalClock() {
         <span className="nepal-clock-date">{date}</span>
         <span className="nepal-clock-bs" lang="ne">{nepaliDate}</span>
         <span className="nepal-clock-time">{time}</span>
-        <span className="nepal-clock-zone">NPT · UTC+05:45</span>
+        <span className="nepal-clock-zone">{labels.zone}</span>
       </time>
       <a
         className="nepal-holiday"
@@ -100,21 +127,91 @@ function NepalClock() {
         aria-label={nextHoliday ? `Upcoming Nepal holiday: ${nextHoliday.name}, ${nextHoliday.dateLabel}` : "View Nepal public holiday calendar"}
         title="View the official Nepal public holiday calendar"
       >
-        <span className="nepal-holiday-label">{nextHoliday ? "UPCOMING HOLIDAY" : "NEPAL HOLIDAYS"}</span>
+        <span className="nepal-holiday-label">{nextHoliday ? labels.upcoming : labels.holidays}</span>
         <span className="nepal-holiday-name">
-          {nextHoliday ? `${nextHoliday.name} · ${nextHoliday.dateLabel}` : "View calendar ↗"}
+          {nextHoliday
+            ? `${nextHoliday.name} · ${nextHoliday.dateLabel}`
+            : labels.viewCalendar}
         </span>
       </a>
     </>
   );
 }
 
+function ThemeToggle() {
+  const [lightMode, setLightMode] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("milan-joshi-theme");
+    const nextLightMode = savedTheme === "light";
+    setLightMode(nextLightMode);
+    document.documentElement.dataset.theme = nextLightMode ? "light" : "dark";
+  }, []);
+
+  const toggleTheme = () => {
+    const nextLightMode = !lightMode;
+    setLightMode(nextLightMode);
+    document.documentElement.dataset.theme = nextLightMode ? "light" : "dark";
+    window.localStorage.setItem("milan-joshi-theme", nextLightMode ? "light" : "dark");
+  };
+
+  return (
+    <button
+      className="theme-toggle"
+      type="button"
+      aria-label={lightMode ? "Switch to dark theme" : "Switch to light theme"}
+      aria-pressed={lightMode}
+      onClick={toggleTheme}
+    >
+      <span className="theme-toggle-icon" aria-hidden="true">
+        {lightMode ? "☼" : "◐"}
+      </span>
+      <span>{lightMode ? "Light" : "Dark"}</span>
+    </button>
+  );
+}
+
 export default function Navbar() {
+  const [language, setLanguage] = useState<Language>("en");
+
+  useEffect(() => {
+    const savedLanguage = window.localStorage.getItem("milan-joshi-language");
+    if (savedLanguage === "en" || savedLanguage === "ne" || savedLanguage === "hi") {
+      setLanguage(savedLanguage);
+      document.documentElement.lang = savedLanguage;
+    }
+  }, []);
+
+  const updateLanguage = (nextLanguage: Language) => {
+    setLanguage(nextLanguage);
+    document.documentElement.lang = nextLanguage;
+    window.localStorage.setItem("milan-joshi-language", nextLanguage);
+  };
+
+  const labels = navigationLabels[language];
+
   return (
     <>
       <div className="navbar-meta" aria-label="Nepal time and upcoming holidays">
         <div className="container navbar-meta-inner">
-          <NepalClock />
+          <NepalClock language={language} />
+          <div className="navbar-meta-controls">
+            <label className="language-select">
+              <span className="sr-only">Website language</span>
+              <select
+                value={language}
+                aria-label="Website language"
+                onChange={(event) => updateLanguage(event.target.value as Language)}
+              >
+                {(Object.keys(languageLabels) as Language[]).map((option) => (
+                  <option key={option} value={option}>
+                    {languageLabels[option]}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <ThemeToggle />
+          </div>
         </div>
       </div>
       <header className="navbar">
@@ -140,14 +237,14 @@ export default function Navbar() {
 
           <div className="navbar-right">
             <nav className="navigation" aria-label="Primary navigation">
-              <Link href="/about">About</Link>
-              <Link href="/work">Experience</Link>
-              <Link href="/services">Services</Link>
-              <Link href="/work#areas">Projects</Link>
-              <Link href="/credentials">Credentials</Link>
-              <Link href="/lab">Insights</Link>
-              <Link href="/impact">Community</Link>
-              <Link href="/contact">Contact</Link>
+              <Link href="/about">{labels[0]}</Link>
+              <Link href="/work">{labels[1]}</Link>
+              <Link href="/services">{labels[2]}</Link>
+              <Link href="/work#areas">{labels[3]}</Link>
+              <Link href="/credentials">{labels[4]}</Link>
+              <Link href="/lab">{labels[5]}</Link>
+              <Link href="/impact">{labels[6]}</Link>
+              <Link href="/contact">{labels[7]}</Link>
             </nav>
           </div>
         </div>
