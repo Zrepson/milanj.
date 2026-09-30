@@ -362,7 +362,7 @@ a {
 .home-explore-card h3 { margin: 44px 0 10px; font-size: 23px; letter-spacing: -.03em; }
 .home-explore-card p { max-width: 260px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
 .home-explore-arrow { position: absolute; top: 26px; right: 28px; color: var(--gold); }
-.cta-inner { display: flex; align-items: end; justify-content: space-between; gap: 36px; text-align: left; }
+.cta-inner { display: flex; align-items: flex-end; justify-content: space-between; gap: 36px; text-align: left; }
 .cta-inner .eyebrow { margin-bottom: 20px; }.cta-inner h2 { margin: 0; }
 
 /* ABOUT PAGE */
@@ -393,7 +393,7 @@ a {
 .about-profile-copy p { margin: 0 0 22px; color: #b2b5ab; font-size: 17px; line-height: 1.85; }
 .about-profile-copy .about-profile-lead { color: var(--text); font-size: 21px; line-height: 1.65; }
 .about-gallery-section { padding: 96px 0 104px; border-block: 1px solid #283437; background: #0b1011; }
-.about-gallery-heading { display: flex; align-items: end; justify-content: space-between; gap: 50px; margin-bottom: 38px; }
+.about-gallery-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 50px; margin-bottom: 38px; }
 .about-gallery-heading h2 { margin: 0; font-size: clamp(36px, 4.5vw, 54px); line-height: 1.08; letter-spacing: -.055em; }
 .about-gallery-heading > p { max-width: 390px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.75; }
 .about-gallery-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 26px 18px; }
@@ -428,7 +428,7 @@ a {
 .photo-lightbox-caption > span { color: #aab5ae; font: 11px monospace; white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) { .photo-gallery-trigger img, .photo-gallery-view-label { transition: none; } }
 .about-beliefs-section { padding: 100px 0 112px; }
-.about-beliefs-heading { align-items: end; }
+.about-beliefs-heading { align-items: flex-end; }
 .about-beliefs-heading h2 { max-width: 550px; }
 .about-beliefs-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
 .about-belief { min-height: 190px; padding: 23px 24px 26px; border-right: 1px solid #283437; border-bottom: 1px solid #283437; background: linear-gradient(145deg, #121819, #0b1011); }
@@ -475,6 +475,14 @@ a.work-engagement-logo:hover { transform: translateY(-3px); border-color: var(--
   .work-engagements-duplicate { display: none; }
 }
 .work-moments-section { padding: 100px 0 112px; border-top: 1px solid var(--border); background: #0e100d; }
+.work-testimonial-section { padding: 90px 0 100px; border-block: 1px solid var(--border); background: #0b0d0a; }
+.work-testimonial-section > .container > .eyebrow { margin-bottom: 26px; }
+.work-testimonial { max-width: 900px; margin: 0 auto; padding: clamp(26px, 5vw, 54px); border-left: 2px solid var(--gold); background: #111310; }
+.work-testimonial + .work-testimonial { margin-top: 20px; }
+.work-testimonial blockquote { margin: 0; }
+.work-testimonial blockquote p { margin: 0 0 32px; color: var(--text); font-size: clamp(20px, 2.6vw, 30px); line-height: 1.65; letter-spacing: -.025em; }
+.work-testimonial figcaption { display: grid; gap: 5px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.work-testimonial figcaption cite { margin-bottom: 3px; color: var(--gold); font-size: 16px; font-style: normal; font-weight: 600; }
 .work-moments-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 .work-moment { min-width: 0; margin: 0; }
 .work-moment-image { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--border); background: var(--surface); }
@@ -1441,9 +1449,14 @@ html[data-theme="light"] .approach-section,
 html[data-theme="light"] .home-explore-card,
 html[data-theme="light"] .work-engagements-section,
 html[data-theme="light"] .work-interest-section,
+html[data-theme="light"] .work-testimonial-section,
 html[data-theme="light"] .work-page-nav,
 html[data-theme="light"] .service-offerings-section {
   background: var(--surface-light);
+}
+
+html[data-theme="light"] .work-testimonial {
+  background: #fff;
 }
 
 html[data-theme="light"] .navbar {

@@ -150,6 +150,48 @@ export default function CredentialsPage() {
         </div>
       </section>
 
+      <section className="work-testimonial-section" id="testimonials">
+        <div className="container">
+          <p className="eyebrow">COLLEAGUE TESTIMONIALS</p>
+          <figure className="work-testimonial">
+            <blockquote>
+              <p>
+                It was a pleasure working with Milan Joshi during the Mission
+                Oxygen initiative. He demonstrated strong coordination, clear
+                communication, and dependable execution in high-pressure
+                situations. His practical problem-solving and calm approach
+                significantly supported our team&apos;s success. I recommend him
+                for roles requiring teamwork, leadership, and operational
+                efficiency in future work.
+              </p>
+            </blockquote>
+            <figcaption>
+              <cite>Rabindra Karki</cite>
+              <span>Research Postgraduate Student</span>
+              <span>Department of Health Technology and Informatics</span>
+              <span>The Hong Kong Polytechnic University</span>
+            </figcaption>
+          </figure>
+          <figure className="work-testimonial">
+            <blockquote>
+              <p>
+                Milan consistently demonstrates strong coordination,
+                organizational, and communication skills while working with
+                professionals from different backgrounds. His enthusiasm for
+                learning, combined with his ability to translate ideas into
+                practical initiatives, makes him a valuable collaborator and
+                an inspiring individual.
+              </p>
+            </blockquote>
+            <figcaption>
+              <cite>Nabin Munankarmi</cite>
+              <span>President</span>
+              <span>Biotechnology Society of Nepal</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section className="cta">
         <div className="container">
           <p className="eyebrow">LET&apos;S BUILD</p>
