@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const nepaliMonthStarts = [
@@ -218,21 +217,6 @@ export default function Navbar() {
         <div className="container navbar-inner">
         <Link href="/" className="logo">
           <span className="logo-word">MILAN<span>.</span></span>
-          <span className="logo-flag">
-            <Image
-              src="/images/nepal-flag.webp"
-              className="logo-flag-image logo-flag-animated"
-              alt="Nepal flag"
-              width={25}
-              height={31}
-              unoptimized
-            />
-            <svg className="logo-flag-image logo-flag-static" viewBox="0 0 36 42" aria-hidden="true">
-              <path fill="#173b8f" d="M4 3h29L18 17h12L12 38H4z" />
-              <path fill="#dc143c" d="M5.5 4.5h23.8L16.5 15.5H5.5zm0 12h21.3L11.5 36H5.5z" />
-              <path fill="#fff" d="M11 8.2a3 3 0 1 0 3 4.8 3.8 3.8 0 1 1-3-4.8zm.8 13.4.8 2.2 2.3.1-1.8 1.4.7 2.2-2-1.3-1.9 1.3.7-2.2-1.8-1.4 2.3-.1z" />
-            </svg>
-          </span>
         </Link>
 
           <div className="navbar-right">

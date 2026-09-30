@@ -120,23 +120,6 @@ a {
   color: var(--gold);
 }
 
-.logo-flag {
-  position: relative;
-  display: block;
-  width: 25px;
-  height: 31px;
-  flex: 0 0 auto;
-}
-
-.logo-flag-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
-.logo-flag-static { display: none; }
-html.a11y-reduce-motion .logo-flag-animated { display: none; }
-html.a11y-reduce-motion .logo-flag-static { display: block; }
-@media (prefers-reduced-motion: reduce) {
-  .logo-flag-animated { display: none; }
-  .logo-flag-static { display: block; }
-}
-
 .navbar-right {
   display: flex;
   align-items: center;
@@ -969,7 +952,6 @@ a.work-engagement-logo:hover { transform: translateY(-3px); border-color: var(--
   }
 
   .logo { gap: 6px; font-size: 17px; }
-  .logo-flag { width: 19px; height: 25px; }
 
   .navigation {
     gap: 8px;
