@@ -125,6 +125,8 @@ function NepalClock({ language }: { language: Language }) {
         href="https://moha.gov.np/en/page/government-and-public-holidays-in-2083"
         aria-label={nextHoliday ? `Upcoming Nepal holiday: ${nextHoliday.name}, ${nextHoliday.dateLabel}` : "View Nepal public holiday calendar"}
         title="View the official Nepal public holiday calendar"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <span className="nepal-holiday-label">{nextHoliday ? labels.upcoming : labels.holidays}</span>
         <span className="nepal-holiday-name">
