@@ -475,6 +475,14 @@ a.work-engagement-logo:hover { transform: translateY(-3px); border-color: var(--
   .work-engagements-duplicate { display: none; }
 }
 .work-moments-section { padding: 100px 0 112px; border-top: 1px solid var(--border); background: #0e100d; }
+.work-testimonial-section { padding: 90px 0 100px; border-block: 1px solid var(--border); background: #0b0d0a; }
+.work-testimonial-section > .container > .eyebrow { margin-bottom: 26px; }
+.work-testimonial { max-width: 900px; margin: 0 auto; padding: clamp(26px, 5vw, 54px); border-left: 2px solid var(--gold); background: #111310; }
+.work-testimonial + .work-testimonial { margin-top: 20px; }
+.work-testimonial blockquote { margin: 0; }
+.work-testimonial blockquote p { margin: 0 0 32px; color: var(--text); font-size: clamp(20px, 2.6vw, 30px); line-height: 1.65; letter-spacing: -.025em; }
+.work-testimonial figcaption { display: grid; gap: 5px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.work-testimonial figcaption cite { margin-bottom: 3px; color: var(--gold); font-size: 16px; font-style: normal; font-weight: 600; }
 .work-moments-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 .work-moment { min-width: 0; margin: 0; }
 .work-moment-image { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--border); background: var(--surface); }
@@ -1441,9 +1449,14 @@ html[data-theme="light"] .approach-section,
 html[data-theme="light"] .home-explore-card,
 html[data-theme="light"] .work-engagements-section,
 html[data-theme="light"] .work-interest-section,
+html[data-theme="light"] .work-testimonial-section,
 html[data-theme="light"] .work-page-nav,
 html[data-theme="light"] .service-offerings-section {
   background: var(--surface-light);
+}
+
+html[data-theme="light"] .work-testimonial {
+  background: #fff;
 }
 
 html[data-theme="light"] .navbar {
