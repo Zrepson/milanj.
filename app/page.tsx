@@ -1,4 +1,17 @@
 import Link from "next/link";
+import WorkInProgress from "@/components/work/WorkInProgress";
+
+export default function Home() {
+  return (
+    <>
+      {/* Other sections */}
+
+      <WorkInProgress />
+
+      {/* Other sections */}
+    </>
+  );
+}
 
 const services = [
   {
