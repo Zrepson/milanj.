@@ -196,6 +196,9 @@ export default function Navbar() {
       <div className="navbar-meta" aria-label="Nepal time and upcoming holidays">
         <div className="container navbar-meta-inner">
           <NepalClock language={language} />
+          <p className="navbar-notice" role="status">
+            Website not finalized yet
+          </p>
           <div className="navbar-meta-controls">
             <label className="language-select">
               <span className="sr-only">Website language</span>

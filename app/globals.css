@@ -80,6 +80,17 @@ a {
   margin-left: 18px;
 }
 
+.navbar-notice {
+  margin: 0 0 0 18px;
+  color: #d9e66b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .navbar-meta-controls {
   display: flex;
   align-items: center;
