@@ -297,6 +297,19 @@ export default function WorkPage() {
         </div>
       </section>
 
+      <section className="about-closing-section">
+        <div className="container about-closing-inner">
+          <p className="eyebrow">STILL LEARNING · STILL EXPLORING</p>
+          <h2>There is always another road worth discovering.</h2>
+          <p>
+            I don&apos;t see life as a straight line. It is a network of roads—some
+            planned, some unexpected. I&apos;m still learning, still building and
+            open to where they lead. My aim is to contribute with curiosity
+            and leave things a little better than I found them.
+          </p>
+        </div>
+      </section>
+
       <section className="section work-journey-section" id="timeline">
         <div className="container">
           <div className="section-heading">
