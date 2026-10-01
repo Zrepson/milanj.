@@ -195,26 +195,35 @@ export default function Navbar() {
     <>
       <div className="navbar-meta" aria-label="Nepal time and upcoming holidays">
         <div className="container navbar-meta-inner">
-          <NepalClock language={language} />
           <p className="navbar-notice" role="status">
-            Website not finalized yet
+            Website not finalized yet ·{" "}
+            <a
+              href="https://milanjoshicomnp.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              visit the previous website ↗
+            </a>
           </p>
-          <div className="navbar-meta-controls">
-            <label className="language-select">
-              <span className="sr-only">Website language</span>
-              <select
-                value={language}
-                aria-label="Website language"
-                onChange={(event) => updateLanguage(event.target.value as Language)}
-              >
-                {(Object.keys(languageLabels) as Language[]).map((option) => (
-                  <option key={option} value={option}>
-                    {languageLabels[option]}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <ThemeToggle />
+          <div className="navbar-meta-details">
+            <NepalClock language={language} />
+            <div className="navbar-meta-controls">
+              <label className="language-select">
+                <span className="sr-only">Website language</span>
+                <select
+                  value={language}
+                  aria-label="Website language"
+                  onChange={(event) => updateLanguage(event.target.value as Language)}
+                >
+                  {(Object.keys(languageLabels) as Language[]).map((option) => (
+                    <option key={option} value={option}>
+                      {languageLabels[option]}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>

@@ -60,9 +60,18 @@ a {
 
 .navbar-meta-inner {
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  min-height: 58px;
+  gap: 8px;
+  padding: 9px 0;
+}
+
+.navbar-meta-details {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .navbar-meta .nepal-clock {
@@ -81,7 +90,7 @@ a {
 }
 
 .navbar-notice {
-  margin: 0 0 0 18px;
+  margin: 0;
   color: #d9e66b;
   font-size: 10px;
   font-weight: 700;
@@ -89,6 +98,17 @@ a {
   line-height: 1.2;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+.navbar-notice a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.navbar-notice a:hover,
+.navbar-notice a:focus-visible {
+  color: var(--text);
 }
 
 .navbar-meta-controls {
@@ -837,7 +857,7 @@ a.work-engagement-logo:hover { transform: translateY(-3px); border-color: var(--
   .work-engagement-item { flex-basis: 190px; }
   .work-moments-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .work-timeline-item { grid-template-columns: 35px 125px 1fr; gap: 16px; }
-  .navbar-meta-inner { min-height: 50px; }
+  .navbar-meta-inner { gap: 6px; padding-block: 7px; }
   .navbar-meta .nepal-clock { padding: 6px 8px 5px; }
   .navbar-meta .nepal-clock { column-gap: 7px; }
   .navbar-meta .nepal-clock-date { font-size: 9px; }
