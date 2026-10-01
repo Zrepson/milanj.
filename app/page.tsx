@@ -3,13 +3,13 @@ import Link from "next/link";
 const services = [
   {
     number: "01",
-    title: "Web development",
-    description: "Thoughtful websites and digital experiences, built to work beautifully across devices.",
+    title: "Research & Documentation",
+    description: "Turning information into structured reports, insights, presentations, digital content, and practical decision-support materials.",
     label: "Design · Build · Launch",
   },
   {
     number: "02",
-    title: "Project coordination",
+    title: "Project & Program Coordination",
     description: "Clear plans, steady communication and practical delivery from kickoff to handoff.",
     label: "Plan · Align · Deliver",
   },
@@ -21,8 +21,8 @@ const services = [
   },
   {
     number: "04",
-    title: "Life insurance",
-    description: "Guidance to help individuals and families make informed protection decisions.",
+    title: "Life insurance Service",
+    description: "Life Insurance ServicesHelping individuals and families understand life insurance, financial protection, and long-term planning through professional advisory services.",
     label: "Understand · Choose · Protect",
   },
 ];
