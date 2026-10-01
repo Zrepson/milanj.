@@ -7,34 +7,6 @@ export const metadata = {
     "Professional experience, project contributions, organizational engagements and field events from Milan Joshi's work.",
 };
 
-const experienceAreas = [
-  {
-    number: "01",
-    title: "Web Development",
-    description:
-      "Responsive, modern websites and digital experiences built with contemporary web technologies.",
-  },
-  {
-    number: "02",
-    title: "Project Coordination",
-    description:
-      "Planning, documentation and execution for projects that need structure and momentum.",
-  },
-  {
-    number: "03",
-    title: "Digital Strategy",
-    description:
-      "SEO, analytics and content strategies designed around measurable objectives.",
-  },
-  {
-    number: "04",
-    title: "Life Insurance",
-    description:
-      "Professional life insurance services focused on financial protection and long-term security.",
-  },
-];
-
-
 const journey = [
   {
     number: "01",
@@ -146,48 +118,6 @@ export default function WorkPage() {
             Professional experience, project contributions, organizational
             engagements and field events from across my career.
           </p>
-        </div>
-      </section>
-
-      <nav className="work-page-nav" aria-label="On this page">
-        <div className="container">
-          <ul>
-            <li><a href="#areas">Areas</a></li>
-            <li><a href="#experience">Profile</a></li>
-            <li><a href="#timeline">Career</a></li>
-            <li><Link href="/credentials#recognition">Credentials</Link></li>
-            <li><Link href="/impact#sustainable-development">SDGs</Link></li>
-            <li><Link href="/services#engagements">Organizations</Link></li>
-            <li><Link href="/credentials#testimonials">Testimonials</Link></li>
-            <li><a href="#moments">Field work</a></li>
-          </ul>
-        </div>
-      </nav>
-
-      <section className="section work-areas-section" id="areas">
-        <div className="container">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">AREAS OF EXPERIENCE</p>
-              <h2>Where I contribute.</h2>
-            </div>
-            <p>
-              A snapshot of the disciplines that have shaped my work. Selected
-              project moments and professional milestones appear below.
-            </p>
-          </div>
-
-          <div className="services-grid">
-            {experienceAreas.map((area) => (
-              <article className="service-card" key={area.number}>
-                <span>{area.number}</span>
-
-                <h3>{area.title}</h3>
-
-                <p>{area.description}</p>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
